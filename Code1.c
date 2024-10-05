@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void findCombinations(int score){
-    int TDCon, TDFG, TD, FG, Saftey;
+    int TDCon, TDFG, TD, FG, Saftey; // Variables for touchdowns, field goals, and safeties
 
     printf("Possible combinations of scoring plays if a team’s score is %d\n", score);
     for (TDCon = 0; TDCon * 8 <= score; TDCon++){
@@ -11,7 +11,7 @@ void findCombinations(int score){
                     int remaining = score - (TDCon * 8 + TDFG * 7 + TD * 6 + FG * 3);
                     if (remaining % 2 == 2){
                         Saftey =  remaining / 2;
-
+                        // Print the valid combination
                         printf("%d TD + 2, %d TD + FG, %d TD, %d 3pt FG, %d Saftey\n"), TDCon, TDFG, TD, FG, Saftey;
                     }
                 }
@@ -24,6 +24,7 @@ void findCombinations(int score){
  int main() {
     int score;
 
+    // Continue to prompt for scores until the user enters a value less than or equal to 1
     while(1){
         printf("Enter 0 or 1 to STOP\n");
         printf("Enter an NFL score: ");
@@ -37,7 +38,6 @@ void findCombinations(int score){
     }
     return 0;
  }
-    
 
     
     
